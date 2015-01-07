@@ -1,2 +1,3 @@
 # lis-ros-pkg
-laboratory for intelligent system
+Laboratory for intelligent system
+This package is for manipulation of deformable objects.
