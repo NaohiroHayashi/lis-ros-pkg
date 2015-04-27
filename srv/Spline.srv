@@ -1,0 +1,10 @@
+geometry_msgs/PoseArray pose
+
+# Spline Type Mode
+# * default (SPLINE_AUTO) mode: iterate through spline types
+uint8 SPLINE_AUTO    = 0
+# uint8 SPLINE_USER    = 1
+
+uint8 spline_mode
+---
+geometry_msgs/PoseArray pose
