@@ -1,1 +1,1 @@
-Point2D points[]
+Point2D[] points
