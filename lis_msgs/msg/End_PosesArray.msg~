@@ -1,0 +1,4 @@
+geometry_msgs/Pose[] left
+geometry_msgs/Pose[] right
+uint64 size
+uint64 seq

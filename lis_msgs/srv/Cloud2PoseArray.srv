@@ -1,0 +1,6 @@
+sensor_msgs/PointCloud2 cloud
+std_msgs/Int64 start_width
+std_msgs/Int64 end_width
+---
+geometry_msgs/PoseArray pose
+

@@ -1,0 +1,13 @@
+lis_msgs/End_PosesArray pose
+---
+# NOTE: lisValid and risValid will be deprecated by result_type in future versions
+bool[] lisValid
+bool[] risValid
+
+# result_type[i] RESULT_INVALID (no valid solution found).
+uint8 RESULT_INVALID = 0
+uint8 RESULT_JUMP = 1
+uint8[] lresult_type
+uint8[] rresult_type
+sensor_msgs/JointState[] left_joints
+sensor_msgs/JointState[] right_joints
