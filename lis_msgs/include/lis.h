@@ -6,9 +6,12 @@
 #include <iostream>
 #include <lis_msgs/End_PosesArray.h>
 #include <lis_msgs/Point2D.h>
+#include <lis_msgs/Plane.h>
 #include <geometry_msgs/PoseArray.h>
 #include <opencv2/core/core.hpp>
 #include <opencv2/core/core_c.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <msg_helpers.h>
 
 struct MATRIX {
    double _11, _12, _13;
@@ -66,3 +69,10 @@ bool IntersectPlaneAndLine(
   const geometry_msgs::Point &B,   //線分終点
   const lis_msgs::Plane &PL, //平面
   geometry_msgs::Point &out);//戻り値　交点が見つかれば格納される)
+  
+  // rotation n-deg via hand_pose
+geometry_msgs::Quaternion move_rotation(geometry_msgs::Pose pose, double deg);
+// rotation n-deg via hand_pose
+geometry_msgs::Quaternion move_rotation2(geometry_msgs::Pose pose, double deg);
+
+geometry_msgs::Point move_position(geometry_msgs::Pose pose, double x, double y, double z);
