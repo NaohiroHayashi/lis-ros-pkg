@@ -137,6 +137,9 @@ add_executable(trajectory_node src/trajectory_node.cpp)
 add_dependencies(trajectory_node trajectory_msgs_generate_messages_cpp)
 target_link_libraries(trajectory_node ${catkin_LIBRARIES})
 
+add_executable(tf_gripper2hook src/tf_gripper2hook.cpp)
+target_link_libraries(tf_gripper2hook ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
