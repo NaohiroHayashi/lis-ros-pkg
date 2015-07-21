@@ -54,7 +54,7 @@ class Hook(object):
         def move_gripper(self, width = 0, gripper = 'all'):
                 if gripper is 'left':
                         self.mx.reg_move([1],
-                                         [180 - 1.2 + width])
+                                         [180 + width])
                         self.mx.action(254)
 
                 elif gripper is 'right':
@@ -64,7 +64,7 @@ class Hook(object):
 
                 elif gripper is 'all':
                         self.mx.reg_move([1, 2],
-                                         [180 -1.2 + width,
+                                         [180 + width,
                                           180 - width])
                         self.mx.action(254)
 
