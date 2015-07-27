@@ -20,6 +20,9 @@ int main(int argc, char **argv)
     ros::Publisher pub_hook = n.advertise<std_msgs::String>("hook", 10);
     std_msgs::String pub_msg;
     
+    //少し待たないと最初のコマンドが届かない
+    ros::Duration(1.0).sleep();//wait time
+    
     ROS_INFO("Left hand open");
     pub_msg.data = "a";//左手オープン10deg
     pub_hook.publish(pub_msg);
