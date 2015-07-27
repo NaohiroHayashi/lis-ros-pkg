@@ -1,3 +1,24 @@
+
+Skip to content
+This repository
+
+    Explore
+    Features
+    Enterprise
+    Blog
+
+1
+0
+
+    0
+
+NaohiroHayashi/lis-ros-pkg
+
+lis-ros-pkg/hook/src/hook_node.py
+@NaohiroHayashi NaohiroHayashi 6 days ago changeparam
+
+1 contributor
+executable file 107 lines (82 sloc) 3.577 kB
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # This module provides a class that controls the serial servo motor manufactured by Futaba Corp.
@@ -54,7 +75,7 @@ class Hook(object):
         def move_gripper(self, width = 0, gripper = 'all'):
                 if gripper is 'left':
                         self.mx.reg_move([1],
-                                         [180 - 1.2 + width])
+                                         [180 + width])
                         self.mx.action(254)
 
                 elif gripper is 'right':
@@ -64,7 +85,7 @@ class Hook(object):
 
                 elif gripper is 'all':
                         self.mx.reg_move([1, 2],
-                                         [180 -1.2 + width,
+                                         [180 + width,
                                           180 - width])
                         self.mx.action(254)
 
