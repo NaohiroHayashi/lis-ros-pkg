@@ -17,14 +17,14 @@ void calIK(const lis_msgs::End_poses& msg){
 
   iksvc_l.request.pose_stamp.resize(1);
   iksvc_l.request.pose_stamp[0].header.stamp = ros::Time::now();
-  iksvc_l.request.pose_stamp[0].header.frame_id = msg.header.frame_id;
+  iksvc_l.request.pose_stamp[0].header.frame_id = "base";
   iksvc_l.request.pose_stamp[0].pose.position = msg.left.position;
   iksvc_l.request.pose_stamp[0].pose.orientation = msg.left.orientation;
   iksvc_l.request.seed_mode = 2;
 
   iksvc_r.request.pose_stamp.resize(1);
   iksvc_r.request.pose_stamp[0].header.stamp = ros::Time::now();
-  iksvc_r.request.pose_stamp[0].header.frame_id = msg.header.frame_id;
+  iksvc_r.request.pose_stamp[0].header.frame_id = "base";
   iksvc_r.request.pose_stamp[0].pose.position = msg.right.position;
   iksvc_r.request.pose_stamp[0].pose.orientation = msg.right.orientation;
   iksvc_r.request.seed_mode = 2;
