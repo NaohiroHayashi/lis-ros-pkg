@@ -89,7 +89,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES trajectory_msgs lis
+  LIBRARIES lis
   CATKIN_DEPENDS actionlib baxter_core_msgs baxter_interface control_msgs roscpp rospy
   DEPENDS system_lib
 )
@@ -124,9 +124,9 @@ add_executable(ik_node src/ik_node.cpp)
 add_dependencies(ik_node ik_generate_messages_cpp)
 target_link_libraries(ik_node ${catkin_LIBRARIES})
 
-add_executable(ik_array_node2 src/ik_array_node2.cpp)
-add_dependencies(ik_array_node2 ik_generate_messages_cpp)
-target_link_libraries(ik_array_node2 ${catkin_LIBRARIES})
+add_executable(ik_array_node src/ik_array_node.cpp)
+add_dependencies(ik_array_node ik_generate_messages_cpp)
+target_link_libraries(ik_array_node ${catkin_LIBRARIES})
 
 add_executable(exe_node src/exe_node.cpp)
 add_dependencies(exe_node rwtest_generate_messages_cpp)

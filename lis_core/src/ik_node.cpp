@@ -43,7 +43,7 @@ void calIK(const lis_msgs::End_poses& msg){
       ROS_ERROR("INVALID LEFT POSE");
   }
 
-  if (client_r.call(iksvc_r)) {
+  if (right_client_.call(iksvc_r)) {
       ROS_INFO("SUCCESS to right call service");
   }
   else {

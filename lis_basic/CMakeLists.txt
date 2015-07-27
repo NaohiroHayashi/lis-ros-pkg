@@ -110,6 +110,11 @@ include_directories(
 #   src/${PROJECT_NAME}/display.cpp
 # )
 
+add_executable(operate_hand_node src/operate_hand_node.cpp)
+target_link_libraries(operate_hand_node
+  ${catkin_LIBRARIES}
+)
+
 add_executable(display_test_node src/display_test_node.cpp)
 target_link_libraries(display_test_node
   ${catkin_LIBRARIES}

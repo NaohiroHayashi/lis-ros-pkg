@@ -130,80 +130,7 @@ include_directories(
   $ENV{HOME}/catkin_ws/src/lis_msgs/lib/liblis.cpp
 )
 
-#~ ## Declare a cpp executable
-add_executable(cal_data_exe src/cal_data.cpp)
 
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(ISL_msgs_node ISL_msgs_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(cal_data_exe
-   ${catkin_LIBRARIES}
-      ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so
- )
-
-add_executable(cal_hp_data_exe src/cal_hp_data.cpp)
-
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(ISL_msgs_node ISL_msgs_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(cal_hp_data_exe
-   ${catkin_LIBRARIES}
-      ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so
- )
-
-add_executable(cal_hpeva_data_exe src/cal_hpeva_data.cpp)
-
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(ISL_msgs_node ISL_msgs_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(cal_hpeva_data_exe
-   ${catkin_LIBRARIES}
-      ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so
- )
-## Declare a cpp executable
-add_executable(cal_3Dcircle_data_exe src/cal_3Dcircle_data.cpp)
-
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(ISL_msgs_node ISL_msgs_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(cal_3Dcircle_data_exe
-   ${catkin_LIBRARIES}
-      ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so
- )
- 
-## Declare a cpp executable
-add_executable(cal_3Dcircle_eva_data_exe src/cal_3Dcircle_eva_data.cpp)
-
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(ISL_msgs_node ISL_msgs_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(cal_3Dcircle_eva_data_exe
-   ${catkin_LIBRARIES}
-      ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so
- ) 
- 
-## Declare a cpp executable
-add_executable(test_data_exe src/test_data.cpp)
-
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(ISL_msgs_node ISL_msgs_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(test_data_exe
-   ${catkin_LIBRARIES}
-      ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so
- )
 
 #############
 ## Install ##
@@ -232,9 +159,9 @@ target_link_libraries(test_data_exe
  #~ )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
- install(DIRECTORY launch
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
- )
+ #~ install(DIRECTORY launch
+   #~ DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
+ #~ )
 
 #############
 ## Testing ##

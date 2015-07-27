@@ -35,7 +35,7 @@ class ExeNode{
     pub_joint_cmd_timeout_r = n.advertise<std_msgs::Float64>("robot/limb/right/joint_command_timeout", 10);
 
     //subscriber
-    sub_joint = n.subscribe("ik_topic", 10, &Exe_node::moveArm, this);
+    sub_joint = n.subscribe("ik_topic", 10, &ExeNode::moveArm, this);
 
     joint_cmd_l.names.resize(7);
     joint_cmd_l.command.resize(7);

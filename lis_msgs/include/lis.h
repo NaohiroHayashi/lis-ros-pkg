@@ -71,8 +71,8 @@ bool IntersectPlaneAndLine(
   geometry_msgs::Point &out);//戻り値　交点が見つかれば格納される)
   
   // rotation n-deg via hand_pose
-geometry_msgs::Quaternion move_rotation(geometry_msgs::Pose pose, double deg);
-// rotation n-deg via hand_pose
-geometry_msgs::Quaternion move_rotation2(geometry_msgs::Pose pose, double deg);
-
-geometry_msgs::Point move_position(geometry_msgs::Pose pose, double x, double y, double z);
+//~ geometry_msgs::Quaternion move_rotation(geometry_msgs::Pose pose, double deg);
+//~ // rotation n-deg via hand_pose
+//~ geometry_msgs::Quaternion move_rotation2(geometry_msgs::Pose pose, double deg);
+//~ 
+//~ geometry_msgs::Point move_position(geometry_msgs::Pose pose, double x, double y, double z);
