@@ -365,7 +365,7 @@ lis_msgs::Plane CalPlane(const geometry_msgs::Point &A, const geometry_msgs::Poi
   geometry_msgs::Vector3 vector12 = object_manipulator::msg::createVector3Msg(B.x - A.x, B.y - A.y, B.z - A.z);
   geometry_msgs::Vector3 vector13 = object_manipulator::msg::createVector3Msg(C.x - A.x, C.y - A.y, C.z - A.z);
 
-  //単位ベクトルんp法線ベクトルを計算する
+  //単位ベクトルの法線ベクトルを計算する
   geometry_msgs::Vector3 unit_normal_vector = normalization_vector(cal_cross(vector12, vector13));
   
   double d = -(unit_normal_vector.x * A.x + unit_normal_vector.y * A.y + unit_normal_vector.z * A.z);
