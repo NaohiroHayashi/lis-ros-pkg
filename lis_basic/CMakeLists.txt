@@ -153,6 +153,10 @@ add_executable(test_node3 src/test_node3.cpp)
 target_link_libraries(test_node3
   ${catkin_LIBRARIES}
 )
+add_executable(test_node4 src/test_node4.cpp)
+target_link_libraries(test_node4
+  ${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############
