@@ -47,8 +47,8 @@ void gen_path(){
 
 int main(int argc, char **argv)
 {
-    ros::NodeHandle n;
     ros::init(argc, argv, "circle_path_node");
+    ros::NodeHandle n;
 
     cout << "Initializing node... " << endl;
 
