@@ -140,6 +140,8 @@ target_link_libraries(trajectory_node ${catkin_LIBRARIES})
 add_executable(tf_gripper2hook src/tf_gripper2hook.cpp)
 target_link_libraries(tf_gripper2hook ${catkin_LIBRARIES})
 
+add_executable(tf_gripper2hook_viz src/tf_gripper2hook_viz.cpp)
+target_link_libraries(tf_gripper2hook_viz ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
