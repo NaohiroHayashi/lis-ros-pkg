@@ -14,7 +14,7 @@ int main(int argc, char** argv){
     
     ros::Rate rate(10.0);
     while (node.ok()){
-    br.sendTransform(tf::StampedTransform(tf::Transform(tf::Quaternion(180.0*M_PI/180.0, 0.0, 0.0*M_PI/180.0), tf::Vector3(0.5, 0.2, 0)), ros::Time::now(), "/base", "/desk"));
+    br.sendTransform(tf::StampedTransform(tf::Transform(tf::Quaternion(180.0*M_PI/180.0, 0.0, 0.0*M_PI/180.0), tf::Vector3(0.5, 0.2, 0.035)), ros::Time::now(), "/base", "/desk"));
         rate.sleep();
     }
     return 0;
