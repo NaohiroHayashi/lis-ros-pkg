@@ -1,4 +1,5 @@
 //(C)2014 Naohiro Hayshi 2015/06/17
+//左右のデータ配列数が違っていても解けるように改造
 #include <ros/ros.h>
 #include <baxter_core_msgs/SolvePositionIK.h>
 #include <std_msgs/Int32MultiArray.h>

@@ -1,0 +1,27 @@
+<Robot name="LIS_hook">
+  <KinBody>
+    <!-- Create the base body, it should never move-->
+    <!-- Note that all translations and rotations are with respect to this base-->
+    <!-- For example, the robot at the identity transformation is equivalent to the identity transformation of the first body.-->
+    <Body name="BASE_LINK" type="dynamic">
+      <Translation>0.0  0.0  0.0</Translation>
+      <Geom type="box">
+        <Extents>0.003 0.003 0.06</Extents>
+        <Translation>0.0 0.003 0.06</Translation>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Extents>0.003 0.003 0.06</Extents>
+        <Translation>0.0 0.0075 0.06</Translation>
+        <rotationaxis>1 0 0 10</rotationaxis>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Extents>0.02 0.02 0.03</Extents>
+        <Translation>0.02 0.0 0.0</Translation>
+        <diffuseColor>1.0 0.7 0.7</diffuseColor>
+      </Geom>
+    </Body>
+  </KinBody>
+  
+</Robot>

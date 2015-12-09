@@ -120,6 +120,10 @@ add_executable(end_poseArray_node src/end_poseArray_node.cpp)
 add_dependencies(end_poseArray_node end_pose_generate_messages_cpp)
 target_link_libraries(end_poseArray_node ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so)
 
+add_executable(hand_transform_node src/hand_transform_node.cpp)
+add_dependencies(hand_transform_node end_pose_generate_messages_cpp)
+target_link_libraries(hand_transform_node ${catkin_LIBRARIES} $ENV{HOME}/catkin_ws/devel/lib/liblis.so)
+
 add_executable(ik_node src/ik_node.cpp)
 add_dependencies(ik_node ik_generate_messages_cpp)
 target_link_libraries(ik_node ${catkin_LIBRARIES})

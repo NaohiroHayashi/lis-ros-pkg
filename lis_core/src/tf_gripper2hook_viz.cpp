@@ -9,15 +9,22 @@ using namespace std;
 
 ros::Subscriber sub_hook_;
 visualization_msgs::Marker l_hook_, r_hook_;
-string path_close_, path_open_;
+string path_lclose_, path_lopen_;
+string path_rclose_, path_ropen_;
 
 void hookCb(const std_msgs::String msg){
-  if ("a" == msg.data) l_hook_.mesh_resource = path_open_;
-  else if ("b" == msg.data) l_hook_.mesh_resource = path_close_;
-  else if ("c" == msg.data) r_hook_.mesh_resource = path_open_;
-  else if ("d" == msg.data) r_hook_.mesh_resource = path_close_;
-  else if ("e" == msg.data) l_hook_.mesh_resource = r_hook_.mesh_resource = path_open_;
-  else if ("f" == msg.data) l_hook_.mesh_resource = r_hook_.mesh_resource = path_close_;
+  if ("a" == msg.data) l_hook_.mesh_resource = path_lopen_;
+  else if ("b" == msg.data) l_hook_.mesh_resource = path_lclose_;
+  else if ("c" == msg.data) r_hook_.mesh_resource = path_ropen_;
+  else if ("d" == msg.data) r_hook_.mesh_resource = path_rclose_;
+  else if ("e" == msg.data) {
+    l_hook_.mesh_resource = path_lopen_;
+    r_hook_.mesh_resource = path_ropen_;
+  }
+  else if ("f" == msg.data) {
+    l_hook_.mesh_resource = path_lclose_;
+    r_hook_.mesh_resource = path_rclose_;
+  }
 }
 
 int main(int argc, char** argv){
@@ -34,12 +41,18 @@ int main(int argc, char** argv){
     sub_hook_ = n.subscribe("/hook", 10, &hookCb);
 
     //stl path
-    path_close_ += "file:///";
-    path_close_ += getenv("HOME");
-    path_close_ +="/catkin_ws/src/learning_tf/src/LIS_close_hook.stl";
-    path_open_ += "file:///";
-    path_open_ += getenv("HOME");
-    path_open_ +="/catkin_ws/src/learning_tf/src/LIS_open_hook.stl";
+    path_lclose_ += "file:///";
+    path_lclose_ += getenv("HOME");
+    path_lclose_ +="/catkin_ws/src/learning_tf/src/LIS_lclose_hook.stl";
+    path_lopen_ += "file:///";
+    path_lopen_ += getenv("HOME");
+    path_lopen_ +="/catkin_ws/src/learning_tf/src/LIS_lopen_hook.stl";
+    path_rclose_ += "file:///";
+    path_rclose_ += getenv("HOME");
+    path_rclose_ +="/catkin_ws/src/learning_tf/src/LIS_rclose_hook.stl";
+    path_ropen_ += "file:///";
+    path_ropen_ += getenv("HOME");
+    path_ropen_ +="/catkin_ws/src/learning_tf/src/LIS_ropen_hook.stl";
     
     //left
     l_hook_.header.frame_id = "left_gripper";
@@ -48,7 +61,7 @@ int main(int argc, char** argv){
     l_hook_.action = visualization_msgs::Marker::ADD;
     l_hook_.pose.position.x = 0.0;
     l_hook_.pose.position.y = 0.0;
-    l_hook_.pose.position.z = -0.003;
+    l_hook_.pose.position.z = 0.0;
     l_hook_.pose.orientation.x = 0.0;
     l_hook_.pose.orientation.y = 0.0;
     l_hook_.pose.orientation.z = 0.0;
@@ -62,17 +75,18 @@ int main(int argc, char** argv){
     l_hook_.color.a = 1.0;
     l_hook_.lifetime = ros::Duration();
     l_hook_.mesh_use_embedded_materials = true;
-    l_hook_.mesh_resource = path_close_;
+    l_hook_.mesh_resource = path_lclose_;
     
     //right
     r_hook_ = l_hook_;
     r_hook_.header.frame_id = "right_gripper";
+    r_hook_.mesh_resource = path_rclose_;
     
     q.setRPY(0.0, 0.0, 0.0);
     rtransform.setRotation(q);
-    rtransform.setOrigin( tf::Vector3(-0.005, 0.000, 0.117) );
+    rtransform.setOrigin( tf::Vector3(-0.005, 0.000, 0.12) );
     ltransform.setRotation(q);
-    ltransform.setOrigin( tf::Vector3(-0.002, 0.008, 0.117) );
+    ltransform.setOrigin( tf::Vector3(-0.002, 0.008, 0.12) );
     
     ros::Rate rate(10.0);
     
