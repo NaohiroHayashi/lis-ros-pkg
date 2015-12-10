@@ -43,16 +43,16 @@ int main(int argc, char** argv){
     //stl path
     path_lclose_ += "file:///";
     path_lclose_ += getenv("HOME");
-    path_lclose_ +="/catkin_ws/src/learning_tf/src/LIS_lclose_hook.stl";
+    path_lclose_ +="/catkin_ws/src/lis_core/src/stl/LIS_lclose_hook.stl";
     path_lopen_ += "file:///";
     path_lopen_ += getenv("HOME");
-    path_lopen_ +="/catkin_ws/src/learning_tf/src/LIS_lopen_hook.stl";
+    path_lopen_ +="/catkin_ws/src/lis_core/src/stl/LIS_lopen_hook.stl";
     path_rclose_ += "file:///";
     path_rclose_ += getenv("HOME");
-    path_rclose_ +="/catkin_ws/src/learning_tf/src/LIS_rclose_hook.stl";
+    path_rclose_ +="/catkin_ws/src/lis_core/src/stl/LIS_rclose_hook.stl";
     path_ropen_ += "file:///";
     path_ropen_ += getenv("HOME");
-    path_ropen_ +="/catkin_ws/src/learning_tf/src/LIS_ropen_hook.stl";
+    path_ropen_ +="/catkin_ws/src/lis_core/src/stl/LIS_ropen_hook.stl";
     
     //left
     l_hook_.header.frame_id = "left_gripper";
