@@ -159,7 +159,7 @@ target_link_libraries(test_node4
 )
 
 add_executable(test_node5 src/test_node5.cpp)
-target_link_libraries(test_node4
+target_link_libraries(test_node5
   ${catkin_LIBRARIES}
 )
 #############
