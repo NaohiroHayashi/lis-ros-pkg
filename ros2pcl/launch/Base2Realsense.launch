@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="x"   value="0.5" />
+  <arg name="y"   value="-0.1" />
+  <arg name="z"   value="0.041" />
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link"
+    args="$(arg x) $(arg y) $(arg z) 0 0 0 /camera_depth_optical_frame /base 100" />
+
+</launch>
